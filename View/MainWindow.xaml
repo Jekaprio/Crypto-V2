@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Crypto_V2.ViewModel"
         mc:Ignorable="d"
-        Title="Crypto V2"  WindowStyle="None" AllowsTransparency="True" >
+        Title="Crypto V2" Height="483"  WindowStyle="None" AllowsTransparency="True" Width="859" >
 
     <Window.DataContext>
         <local:MainwindowViewModel/>
@@ -17,10 +17,13 @@
 
     <Window.Resources>
         <Style x:Key="WindowButtonStyle" TargetType="Button">
-            <Setter Property="Width" Value="30"/>
-            <Setter Property="Height" Value="30"/>
-            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Width" Value="60"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Background" Value="Silver"/>
             <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontFamily" Value="Agency FB"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -42,32 +45,61 @@
         </Style>
     </Window.Resources>
 
-    <Grid Height="485" VerticalAlignment="Top">
-        <Border HorizontalAlignment="Left" Margin="0,60,0,0" VerticalAlignment="Top" Background="GhostWhite"  BorderThickness="2"  CornerRadius="8,8,8,8" Width="61" Height="350" >
+    <Grid Height="485" VerticalAlignment="Top" Margin="0,0,-25,0">
+        <Border HorizontalAlignment="Left" 
+                Margin="0,60,0,0" 
+                VerticalAlignment="Top" 
+                Background="GhostWhite"  
+                BorderThickness="2"  
+                CornerRadius="8,8,8,8" 
+                Width="65" Height="350" >
             <StackPanel Width="242">
                 <Button
-                   x:Name="APIbutton"
-                    Content="API"
-                    FontSize="25"
-                    FontFamily="Agency FB"
-                    Background="Silver"
-                    Click="CheckApiStatus"
-                    Height="50" Width="56"
-                    Margin="0,200,17,25"
-                    HorizontalAlignment="Left"
-                    Style="{StaticResource WindowButtonStyle}"/>
-                <Button Content="Exit" 
-                        Height="50" Width="56"
-                        Style="{StaticResource WindowButtonStyle}"
-                        FontSize="25"
-                        FontFamily="Agency FB"
-                        Background="Silver"
+                        x:Name="Home"
+                        Content="Home"
+                        HorizontalAlignment="Left"
+                        Margin="0,20,0,15"
+                        Style="{StaticResource WindowButtonStyle}"/>
+                <Button
+                        x:Name="Datails"
+                        Content="Details"
+                        HorizontalAlignment="Left"
+                        Margin="0,0,0,15"
+                        Style="{StaticResource WindowButtonStyle}"/>
+                <Button     
+                        x:Name="Setting"
+                        Content="Setting"
+                        HorizontalAlignment="Left"
+                        Margin="0,0,0,15"
+                        Style="{StaticResource WindowButtonStyle}"/>
+                <Button
+                        x:Name="APIbutton"
+                        Content="API"
+                        Click="CheckApiStatus"
+                        Margin="0,0,0,15"
+                        Style="{StaticResource WindowButtonStyle}"/>
+                <Button 
+                        x:Name="Exit"
+                        Content="Exit"  
                         Click="CloseButton_Click"
-                        HorizontalAlignment="Left"/>
+                        Margin="0,0,0,15"
+                        Style="{StaticResource WindowButtonStyle}"
+                        />
             </StackPanel>
         </Border>
-        <Border Grid.Row="1" Background="Silver" Height="20" CornerRadius="8,8,8,8" VerticalAlignment="Top">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"/>
+
+        <Border Background="Silver" 
+                Height="20" 
+                CornerRadius="8,8,8,8" 
+                VerticalAlignment="Top" 
+                MouseDown="TitleBar_MouseDown" 
+                Margin="0,0,25,0">
+            <StackPanel 
+                Orientation="Horizontal" 
+                HorizontalAlignment="Left" 
+                Height="Auto" 
+                Margin="730,0,0,0" >
+            </StackPanel>
         </Border>
     </Grid>
 

@@ -27,6 +27,8 @@ namespace Crypto_V2
             InitializeComponent();
             _httpClient = new HttpClient();
 
+            this.MouseMove += Window_MouseMove;
+            this.MouseUp += Window_MouseUp;
         }
 
         private void CheckApiStatus(object sender, RoutedEventArgs e)  // Перевірка працездатності API 
@@ -41,7 +43,7 @@ namespace Crypto_V2
                     MessageBox.Show("Статус API: API праює нормально (HTTP 200 OK)", "Статус API", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
-            catch (WebException ex)
+            catch (WebException)
             {
                 MessageBox.Show("Статус API: Виникла помилка при доступі до API", "Статус API", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -53,6 +55,39 @@ namespace Crypto_V2
             this.Close();
         }
 
+        private bool isDraggind = false;
+        private Point startPoint;
+
+        private void TitleBar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(e.ChangedButton == MouseButton.Left) 
+            {
+                isDraggind = true;
+                startPoint = e.GetPosition(this);
+            }
+        }
+
+
+        private void Window_MouseMove(object sender, MouseEventArgs e) 
+        {
+            if(isDraggind)
+            {
+                Point endPoint = e.GetPosition(this);
+                double offsetX = endPoint.X - startPoint.X;
+                double offsetY = endPoint.Y - startPoint.Y;
+
+                Left += offsetX;
+                Top += offsetY;
+            }
+        }
+
+        private void Window_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if(e.ChangedButton != MouseButton.Left) 
+            {
+                isDraggind = false;
+            }
+        }
     }
 }
 

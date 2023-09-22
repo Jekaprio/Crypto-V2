@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Crypto_V2.ViewModel"
         mc:Ignorable="d"
-        Title="Crypto V2" Height="600" Width="950"  WindowStyle="None" AllowsTransparency="True" >
+        Title="Crypto V2"  WindowStyle="None" AllowsTransparency="True" >
 
     <Window.DataContext>
         <local:MainwindowViewModel/>
@@ -42,14 +42,9 @@
         </Style>
     </Window.Resources>
 
-    <Grid Margin="0,0,0,50">
-        <Border Grid.Row="1" Background="Silver" Height="20" CornerRadius="8,8,8,8" VerticalAlignment="Top">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"/>
-        </Border>
-
-
-        <Border HorizontalAlignment="Left" Margin="0,58,0,0" VerticalAlignment="Top" Background="GhostWhite"  BorderThickness="2"  CornerRadius="8,8,8,8" Width="61" Height="350" >
-            <StackPanel Orientation="Horizontal">
+    <Grid Height="485" VerticalAlignment="Top">
+        <Border HorizontalAlignment="Left" Margin="0,60,0,0" VerticalAlignment="Top" Background="GhostWhite"  BorderThickness="2"  CornerRadius="8,8,8,8" Width="61" Height="350" >
+            <StackPanel Width="242">
                 <Button
                    x:Name="APIbutton"
                     Content="API"
@@ -58,11 +53,21 @@
                     Background="Silver"
                     Click="CheckApiStatus"
                     Height="50" Width="56"
-                    HorizontalContentAlignment="Center"
-                   VerticalContentAlignment="Center"
+                    Margin="0,200,17,25"
+                    HorizontalAlignment="Left"
                     Style="{StaticResource WindowButtonStyle}"/>
-
+                <Button Content="Exit" 
+                        Height="50" Width="56"
+                        Style="{StaticResource WindowButtonStyle}"
+                        FontSize="25"
+                        FontFamily="Agency FB"
+                        Background="Silver"
+                        Click="CloseButton_Click"
+                        HorizontalAlignment="Left"/>
             </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Background="Silver" Height="20" CornerRadius="8,8,8,8" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"/>
         </Border>
     </Grid>
 

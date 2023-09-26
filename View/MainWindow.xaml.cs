@@ -1,5 +1,4 @@
-﻿using Crypto_V2.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -15,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Crypto_V2.ViewModel;
 
 namespace Crypto_V2
 {
@@ -25,8 +25,9 @@ namespace Crypto_V2
         public MainWindow()
         {
             InitializeComponent();
+           
             _httpClient = new HttpClient();
-
+            
             this.MouseMove += Window_MouseMove;
             this.MouseUp += Window_MouseUp;
         }
@@ -50,12 +51,12 @@ namespace Crypto_V2
         }
 
       
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        private void CloseButton_Click(object sender, RoutedEventArgs e) // Закрити програму 
         {
             this.Close();
         }
 
-        private bool isDraggind = false;
+        private bool isDraggind = false; // Контролювати програму в TitleBar мишею
         private Point startPoint;
 
         private void TitleBar_MouseDown(object sender, MouseButtonEventArgs e)
@@ -87,6 +88,27 @@ namespace Crypto_V2
             {
                 isDraggind = false;
             }
+        }
+
+       private void Home_Click(object sender, RoutedEventArgs e)  // Відкрити сторінку Home
+        {
+            MainFrame.Navigate(new Uri("View/Home.xaml", UriKind.Relative));
+            TextBlockHello.Background = Brushes.Transparent;
+            TextBlockHello.Foreground = Brushes.Transparent;
+        }
+
+        private void Details_Click(object sender, RoutedEventArgs e) // Відкрити стоірнку Details
+        {
+            MainFrame.Navigate(new Uri("View/Detailed.xaml", UriKind.Relative));
+            TextBlockHello.Background = Brushes.Transparent;
+            TextBlockHello.Foreground = Brushes.Transparent;
+        }
+
+        private void Setting_Click(object sender, RoutedEventArgs e) // Відкрити сторінку Setting
+        {
+            MainFrame.Navigate(new Uri("View/Setting.xaml", UriKind.Relative));
+            TextBlockHello.Background = Brushes.Transparent;
+            TextBlockHello.Foreground = Brushes.Transparent;
         }
     }
 }

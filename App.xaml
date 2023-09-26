@@ -4,7 +4,98 @@
              xmlns:local="clr-namespace:Crypto_V2"
              StartupUri="View/MainWindow.xaml">
     <Application.Resources>
-    
-        
+        <Style x:Key="WindowButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="60"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Background" Value="Silver"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontFamily" Value="Agency FB"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Rectangle Name="ButtonBackground" Fill="{TemplateBinding Background}" RadiusX="20" RadiusY="50"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBackground" Property="Fill" Value="Pink"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="ButtonBackground" Property="Fill" Value="	#FFB6C1"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#FAEBD7" BlurRadius="18" ShadowDepth="0" Opacity="2"/>
+                </Setter.Value>
+            </Setter>
+        </Style>  
+        <Style x:Key="WindowStyle" TargetType="Window">
+            <Setter Property="WindowStyle" Value="None"/>
+            <Setter Property="AllowsTransparency" Value="True"/>
+            <Setter Property="Clip">
+                <Setter.Value>
+                    <RectangleGeometry Rect="0,0,857,483" RadiusX="25" RadiusY="50"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ListViewKEY" TargetType="ListView">
+            <Setter Property="Background" Value="GhostWhite" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListView">
+                        <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="25">
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="1" Direction="320" Opacity="0.5" BlurRadius="55" Color="#FAEBD7" />
+                            </Border.Effect>
+                            <ScrollViewer>
+                                <ItemsPresenter />
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="FontFamily" Value="Agency FB" />
+                        <!-- Змінити шрифт на "Agency FB" -->
+                        <Setter Property="Foreground" Value="Silver" />
+                        <!-- Змінити колір тексту на "Silver" -->
+                        <Setter Property="FontSize" Value="25"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="Silver" />
+                                <Setter Property="Foreground" Value="GhostWhite" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="GlowTextStyle" TargetType="TextBlock">
+
+            <Setter Property="FontFamily" Value="Arial" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Gold" BlurRadius="10" ShadowDepth="0" Opacity="1" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Application.Resources>
 </Application>

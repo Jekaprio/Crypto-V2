@@ -1,41 +1,55 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Reflection.Emit;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 using System.Windows;
 
 public class CryptoModel
 {
     private readonly HttpClient _httpClientCoinCap;
-   
 
     public CryptoModel()
     {
         _httpClientCoinCap = new HttpClient();
-        _httpClientCoinCap.BaseAddress = new Uri("https://api.coincap.io/v2/assets");
+        _httpClientCoinCap.BaseAddress = new Uri("https://api.coincap.io/v2/");
     }
 
-   
-    public async Task<string> GetCoinCapdataAsync()
+    public async Task<List<CryptoData>> GetTop10CryptoDataAsync()
     {
         try
         {
-            HttpResponseMessage response = await _httpClientCoinCap.GetAsync("https://api.coincap.io/v2/assets");
+            HttpResponseMessage response = await _httpClientCoinCap.GetAsync("assets?limit=10");
             response.EnsureSuccessStatusCode();
             string data = await response.Content.ReadAsStringAsync();
-            return data;
+            var cryptoData = JsonConvert.DeserializeObject<CryptoDataList>(data);
+            return cryptoData.Data;
         }
-        catch(HttpRequestException ex)
-        {        
-            return ex.Message;
+        catch (HttpRequestException ex)
+        {
+            throw ex;
         }
     }
-  
+
+    public class CryptoDataList
+    {
+        [JsonProperty("data")]
+        public List<CryptoData> Data { get; set; }
+    }
+
+    public class CryptoData
+    {
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("symbol")]
+        public string Symbol { get; set; }
+
+        [JsonProperty("priceUsd")]
+        public string priceUsd { get; set; }
+    }
 }
-
-
-    
-
-

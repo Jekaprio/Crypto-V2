@@ -1,0 +1,8 @@
+C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\CryptoV2.csproj.AssemblyReference.cache
+C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\View\MainWindow.g.cs
+C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\App.g.cs
+C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\Crypto V2_MarkupCompile.cache
+C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\Crypto V2_MarkupCompile.lref
+C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\Crypto V2.exe
+C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\Crypto V2.pdb

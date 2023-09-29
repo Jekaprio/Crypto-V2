@@ -96,9 +96,8 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
-        
-
-
+        <Style x:Key="HyperLinkStyle" TargetType="Hyperlink">
+            <Setter Property="Foreground" Value="Pink" />
+        </Style>
     </Application.Resources>
 </Application>

@@ -48,6 +48,25 @@ public class CryptoModel
         }
     }
 
+    public async Task<CryptoData> SearchCryptoByNameOrSymbol(string searchTerm)
+    {
+        if (string.IsNullOrWhiteSpace(searchTerm))
+            return null;
+
+        try
+        {
+            HttpResponseMessage response = await _httpClientCoinCap.GetAsync($"assets/{searchTerm}");
+            response.EnsureSuccessStatusCode();
+            string data = await response.Content.ReadAsStringAsync();
+            var cryptoData = JsonConvert.DeserializeObject<CryptoData>(data);
+            return cryptoData;
+        }
+        catch (HttpRequestException ex)
+        {
+            throw ex;
+        }
+    }
+
     public class CryptoDataList
     {
         [JsonProperty("data")]
@@ -73,6 +92,10 @@ public class CryptoModel
 
         [JsonProperty("changePercent24Hr")]
         public string ChangePercent24Hr { get; set; }
+
+        [JsonProperty("explorer")]
+        public string explorer { get;set; }
+         
         
     }
 }

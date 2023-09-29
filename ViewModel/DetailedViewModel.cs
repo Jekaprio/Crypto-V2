@@ -1,20 +1,28 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static CryptoModel;
 
 namespace Crypto_V2.ViewModel
 {
     internal class DetailedViewModel
     {
         private readonly CryptoModel _cryptoModel;
-      
+
+        [JsonProperty("explorer")]
+        public string Explorer { get; set; }
+
+        public ObservableCollection<CryptoModel.CryptoData> CryptoDataList { get; set; }
 
         public DetailedViewModel()
         {
             _cryptoModel = new CryptoModel();
+            CryptoDataList = new ObservableCollection<CryptoModel.CryptoData>();
         }
 
         public List<CryptoModel.CryptoData> GetAllCryptos()
@@ -32,5 +40,8 @@ namespace Crypto_V2.ViewModel
 
             return foundCrypto;
         }
+
+       
+
     }
 }

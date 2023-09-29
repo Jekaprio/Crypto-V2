@@ -33,14 +33,33 @@ namespace Crypto_V2.View
             var foundCrypto = await Task.Run(() => detailedViewModel.SearchCryptoByNameOrSymbol(searchTerm));
             if (foundCrypto != null)
             {
-                ResultTextBlock.Text = $"Cryptocurrency found: {foundCrypto.Name} ({foundCrypto.Symbol})";
+                ResultTextBlock.Inlines.Clear();
+                Hyperlink hyperlink = new Hyperlink(new Run($"Cryptocurrency found: {foundCrypto.Name} ({foundCrypto.Symbol})"));
+                hyperlink.NavigateUri = new Uri(foundCrypto.explorer); // Додаємо URL до експлорера
+                hyperlink.RequestNavigate += Hyperlink_RequestNavigate; // Обробник події для обробки натискання
+                hyperlink.Style = (Style)Application.Current.Resources["HyperLinkStyle"];
+                ResultTextBlock.Inlines.Add(hyperlink);
+                ResultTextBlock.Inlines.Add(new LineBreak());
+                ResultTextBlock.Inlines.Add($"Supply: {foundCrypto.Supply}");
+                ResultTextBlock.Inlines.Add(new LineBreak());
+                ResultTextBlock.Inlines.Add($"Price change in %: {foundCrypto.ChangePercent24Hr}");
             }
             else
             {
                 ResultTextBlock.Text = "No cryptocurrency found";
             }
         }
-      
+
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            // Відкрити URL в браузері
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true; // Позначити подію обробленою, щоб TextBlock не сприймав її як звичайний текст
+        }
+       
+
+
+
 
     }
 }

@@ -29,3 +29,9 @@ C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\View\Detailed.g.cs
 C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\View\Detailed.baml
 C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\View\Setting.g.cs
 C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\View\Setting.baml
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\LiveCharts.dll
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\LiveCharts.Wpf.dll
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\LiveCharts.pdb
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\LiveCharts.xml
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\LiveCharts.Wpf.pdb
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\LiveCharts.Wpf.xml

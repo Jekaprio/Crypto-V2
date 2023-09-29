@@ -1,20 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Crypto_V2.ViewModel;
 
 namespace Crypto_V2
 {
@@ -35,22 +24,20 @@ namespace Crypto_V2
         private void CheckApiStatus(object sender, RoutedEventArgs e)  // Перевірка працездатності API 
         {
             string apiUrl = "https://api.coincap.io/v2/assets";
-
             try
             {
                 using (WebClient client = new WebClient())
                 {
                     string response = client.DownloadString(apiUrl);
-                    MessageBox.Show("Статус API: API праює нормально (HTTP 200 OK)", "Статус API", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Status API: API work (HTTP 200 OK)", "API Status", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             catch (WebException)
             {
-                MessageBox.Show("Статус API: Виникла помилка при доступі до API", "Статус API", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Status API: API don't work, check internet connection", "API Status", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-      
         private void CloseButton_Click(object sender, RoutedEventArgs e) // Закрити програму 
         {
             this.Close();
@@ -67,7 +54,6 @@ namespace Crypto_V2
                 startPoint = e.GetPosition(this);
             }
         }
-
 
         private void Window_MouseMove(object sender, MouseEventArgs e) 
         {

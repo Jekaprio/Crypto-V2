@@ -1,65 +1,60 @@
 ﻿using Crypto_V2.ViewModel;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using static CryptoModel;
 
 namespace Crypto_V2.View
 {
-  
     public partial class Detailed : Page
     {
+        private readonly CryptoModel _cryptoModel;
+       
         public Detailed()
         {
             InitializeComponent();
+            _cryptoModel = new CryptoModel();
             DetailedViewModel viewModel = new DetailedViewModel();
             DataContext = viewModel;
+
+           
         }
 
         private async void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            string searchTerm = SearchTextBox.Text;
+            string searchTerm = Search_TextBox.Text;
             var detailedViewModel = new DetailedViewModel();
             var foundCrypto = await Task.Run(() => detailedViewModel.SearchCryptoByNameOrSymbol(searchTerm));
             if (foundCrypto != null)
             {
-                ResultTextBlock.Inlines.Clear();
-                Hyperlink hyperlink = new Hyperlink(new Run($"Cryptocurrency found: {foundCrypto.Name} ({foundCrypto.Symbol})"));
-                hyperlink.NavigateUri = new Uri(foundCrypto.explorer); // Додаємо URL до експлорера
-                hyperlink.RequestNavigate += Hyperlink_RequestNavigate; // Обробник події для обробки натискання
+                Result_TextBlock.Inlines.Clear();
+                Result_TextBlock.Inlines.Add(new Bold(new Run("Cryptocurrency found:  ")));
+                Hyperlink hyperlink = new Hyperlink(new Run($"{foundCrypto.Name} ({foundCrypto.Symbol})"));
+                hyperlink.NavigateUri = new Uri(foundCrypto.explorer); 
+                hyperlink.RequestNavigate += Hyperlink_RequestNavigate; 
                 hyperlink.Style = (Style)Application.Current.Resources["HyperLinkStyle"];
-                ResultTextBlock.Inlines.Add(hyperlink);
-                ResultTextBlock.Inlines.Add(new LineBreak());
-                ResultTextBlock.Inlines.Add($"Supply: {foundCrypto.Supply}");
-                ResultTextBlock.Inlines.Add(new LineBreak());
-                ResultTextBlock.Inlines.Add($"Price change in %: {foundCrypto.ChangePercent24Hr}");
+                Result_TextBlock.Inlines.Add(hyperlink);
+                Result_TextBlock.Inlines.Add(new LineBreak());
+                Result_TextBlock.Inlines.Add(new Bold(new Run("Supply:  ")));
+                Result_TextBlock.Inlines.Add($"{foundCrypto.Supply}");
+                Result_TextBlock.Inlines.Add(new LineBreak());
+                Result_TextBlock.Inlines.Add(new Bold(new Run("Price change:  ")));
+                Result_TextBlock.Inlines.Add($"{foundCrypto.ChangePercent24Hr} %");
             }
             else
             {
-                ResultTextBlock.Text = "No cryptocurrency found";
-            }
+                Result_TextBlock.Text = "No cryptocurrency found";
+            }   
         }
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
-            // Відкрити URL в браузері
             System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(e.Uri.AbsoluteUri));
-            e.Handled = true; // Позначити подію обробленою, щоб TextBlock не сприймав її як звичайний текст
+            e.Handled = true;
         }
-       
-
-
-
 
     }
 }

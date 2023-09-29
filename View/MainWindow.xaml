@@ -97,7 +97,6 @@
                 Margin="730,0,0,0" >
             </StackPanel>
         </Border>
-
         <Border Background="#FAEBD7" 
                 Height="20" 
                 CornerRadius="25,25,25,25" 

@@ -3,21 +3,39 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       xmlns:local="clr-namespace:Crypto_V2.View"
       mc:Ignorable="d" Height="Auto" Width="Auto"
       Title="Detailed">
 
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,85,0,0">
-            <TextBox x:Name="SearchTextBox" Width="55" Height="25" Margin="0,0,0,10" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Agency FB"/>
-            <Button Style="{StaticResource WindowButtonStyle}" HorizontalAlignment="Center" Content="Search" Click="SearchButton_Click" Height="Auto" Width="65" Margin="0,0,0,10" />
-            <TextBlock x:Name="ResultTextBlock" Width="Auto" Height="Auto" FontSize="25" FontFamily="Agency FB">
-
-            </TextBlock>
+            <TextBox 
+                x:Name="Search_TextBox" 
+                Style="{StaticResource TextBoxStyle}"
+                Width="85" 
+                Height="25" 
+                Margin="0,0,0,10" 
+                FontSize="20" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" 
+                FontFamily="Agency FB"
+                ToolTip="Enter Symbol or Name cryptocurrency &#x0a; &#x0a;Example: BTC or Bitcoin"/>
+            <Button 
+                x:Name="Search_Button"
+                Style="{StaticResource WindowButtonStyle}" 
+                HorizontalAlignment="Center" 
+                Content="Search" 
+                Click="SearchButton_Click" 
+                Height="Auto" 
+                Width="65" 
+                Margin="0,0,0,10" />
+            <TextBlock 
+                x:Name="Result_TextBlock" 
+                Width="Auto" 
+                Height="Auto" 
+                FontSize="25" 
+                FontFamily="Agency FB"/>
         </StackPanel>
-
-
-
-
     </Grid>
 </Page>

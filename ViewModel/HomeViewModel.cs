@@ -1,9 +1,6 @@
-﻿ using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Timers;
@@ -42,11 +39,10 @@ namespace Crypto_V2.ViewModel
                         CryptoDataList.Add(cryptoData);
                     }
                 });
-                //MessageBox.Show("Дані успішно завантажено. Кількість записів:" + CryptoDataList.Count); // Перевірка на кількість завантажених даних
             }
-            catch (HttpRequestException ex)
+            catch (HttpRequestException)
             {
-                MessageBox.Show("Помилка при завантаженні даних з API: " + ex.Message);
+                MessageBox.Show("API don't work, check internet connection", "Home", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

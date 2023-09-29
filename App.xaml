@@ -71,13 +71,11 @@
                 <Setter.Value>
                     <Style TargetType="ListViewItem">
                         <Setter Property="FontFamily" Value="Agency FB" />
-                        <!-- Змінити шрифт на "Agency FB" -->
                         <Setter Property="Foreground" Value="Silver" />
-                        <!-- Змінити колір тексту на "Silver" -->
                         <Setter Property="FontSize" Value="25"/>
                         <Style.Triggers>
                             <Trigger Property="IsSelected" Value="True">
-                                <Setter Property="Background" Value="Silver" />
+                                <Setter Property="Background" Value="Pink" />
                                 <Setter Property="Foreground" Value="GhostWhite" />
                             </Trigger>
                         </Style.Triggers>
@@ -85,19 +83,38 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="GlowTextStyle" TargetType="TextBlock">
-
-            <Setter Property="FontFamily" Value="Arial" />
-            <Setter Property="FontSize" Value="24" />
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Effect">
-                <Setter.Value>
-                    <DropShadowEffect Color="Gold" BlurRadius="10" ShadowDepth="0" Opacity="1" />
-                </Setter.Value>
-            </Setter>
-        </Style>
         <Style x:Key="HyperLinkStyle" TargetType="Hyperlink">
             <Setter Property="Foreground" Value="Pink" />
+        </Style>
+        <Style x:Key="TextBoxStyle" TargetType="TextBox" >
+            <Setter Property="Background" Value="#f0f0f0" />
+            <Setter Property="Foreground" Value="#333" />
+            <Setter Property="BorderBrush" Value="#ccc" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="MinWidth" Value="150" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid>
+                            <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="10">
+                                <ScrollViewer x:Name="PART_ContentHost" />
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="PART_ContentHost" Property="Opacity" Value="3" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Application.Resources>
 </Application>

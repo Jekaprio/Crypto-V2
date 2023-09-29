@@ -32,6 +32,22 @@ public class CryptoModel
         }
     }
 
+    public async Task<List<CryptoData>> GetAllCryptoDataAsync()
+    {
+        try
+        {
+            HttpResponseMessage response = await _httpClientCoinCap.GetAsync("assets");
+            response.EnsureSuccessStatusCode();
+            string data = await response.Content.ReadAsStringAsync();
+            var cryptoData = JsonConvert.DeserializeObject<CryptoDataList>(data);
+            return cryptoData.Data;
+        }
+        catch (HttpRequestException ex)
+        {
+            throw ex;
+        }
+    }
+
     public class CryptoDataList
     {
         [JsonProperty("data")]
@@ -50,6 +66,17 @@ public class CryptoModel
         public string Symbol { get; set; }
 
         [JsonProperty("priceUsd")]
-        public string priceUsd { get; set; }
+        public string PriceUsd { get; set; }
+
+        [JsonProperty("supply")]
+        public string Supply { get; set; }
+
+        [JsonProperty("changePercent24Hr")]
+        public string ChangePercent24Hr { get; set; }
+        
     }
 }
+
+
+
+

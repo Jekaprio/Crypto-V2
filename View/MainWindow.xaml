@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Crypto V2"  WindowStyle="None" AllowsTransparency="True" Height="Auto" Width="Auto"
+        Title="Crypto V2"  WindowStyle="None" AllowsTransparency="True" Height="500" Width="900"
         Style="{StaticResource WindowStyle}">
 
     <Grid Height="485" VerticalAlignment="Top" Margin="0,0,-25,0" Background="Transparent">
@@ -54,7 +54,34 @@
             </StackPanel>
         </Border>
 
-        <TextBlock Text="hello" x:Name="TextBlockHello" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Yellow"/>
+        <TextBlock x:Name="TextBlockHello" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" TextWrapping="Wrap" Width="700" Height="400" FontFamily="Agency FB">
+                <Run Text="Introducing"/>
+                <Run Text="Crypto" FontWeight="Bold" FontStyle="Normal"/>
+                <Run Text="– your comprehensive companion in the world of cryptocurrencies. With Crypto, you get:"/>
+            <LineBreak/>
+            <LineBreak/>
+                <Run Text="Exploration:" FontWeight="Bold" FontStyle="Normal"/>
+                <Run Text="Dive into the world of digital currencies. Explore the latest cryptocurrencies, including market prices, trading volumes, and historical data."/>
+            <LineBreak/>
+            <LineBreak/>
+                <Run Text="Conversion:" FontWeight="Bold" FontStyle="Normal"/>
+                <Run Text="Convert one cryptocurrency to another with ease. Calculate exchange rates and switch between different cryptocurrencies effortlessly."/>
+            <LineBreak/>
+            <LineBreak/>
+                <Run Text="Effortless Search:" FontWeight="Bold" FontStyle="Normal"/>
+                <Run Text="Find specific cryptocurrencies quickly. Our intuitive search helps you stay informed." />
+            <LineBreak/>
+            <LineBreak/>
+                <Run Text="Visualize Trends:" FontWeight="Bold" FontStyle="Normal"/>
+                <Run Text="Understand cryptocurrency trends with interactive charts. Monitor price fluctuations and make informed decisions."/>
+            <LineBreak/>
+            <LineBreak/>
+                <Run Text="Customization:" FontWeight="Bold" FontStyle="Normal"/>
+                <Run Text="Personalize your experience. Choose languages and themes that match your style."/>
+            <LineBreak/>
+            <LineBreak/>
+            <Run Text="Crypto is your trusted partner in the cryptocurrency world, whether you're an enthusiast, investor, or simply curious. Explore, convert, and thrive with Crypto."/>
+        </TextBlock>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
         </StackPanel>
         <Border Background="#FAEBD7" 

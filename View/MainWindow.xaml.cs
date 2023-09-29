@@ -108,7 +108,7 @@ namespace Crypto_V2
         {
             MainFrame.Navigate(new Uri("View/Setting.xaml", UriKind.Relative));
             TextBlockHello.Background = Brushes.Transparent;
-            TextBlockHello.Foreground = Brushes.Transparent;
+            TextBlockHello.Foreground = Brushes.Transparent; 
         }
     }
 }

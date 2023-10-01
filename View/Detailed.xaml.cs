@@ -38,7 +38,7 @@ namespace Crypto_V2.View
                 hyperlink.Style = (Style)Application.Current.Resources["HyperLinkStyle"];
                 Result_TextBlock.Inlines.Add(hyperlink);
                 Result_TextBlock.Inlines.Add(new LineBreak());
-                Result_TextBlock.Inlines.Add(new Bold(new Run("Supply:  ")));
+                Result_TextBlock.Inlines.Add(new Bold(new Run("Volume:  ")));
                 Result_TextBlock.Inlines.Add($"{foundCrypto.Supply}");
                 Result_TextBlock.Inlines.Add(new LineBreak());
                 Result_TextBlock.Inlines.Add(new Bold(new Run("Price change:  ")));

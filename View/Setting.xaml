@@ -3,85 +3,14 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Crypto_V2.View"
+      xmlns:local="clr-namespace:Crypto_V2.ViewModel"
       mc:Ignorable="d" 
     
       Title="Setting">
 
     <Grid>
-        <StackPanel Width="100" Height="100" HorizontalAlignment="Left" Margin="100,0,0,200">
-            <TextBlock Text="Language" FontSize="25" FontFamily="Agency FB"/>
-        <ComboBox Width="100" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="{Binding ImageSource}" Width="20" Height="20" Margin="0,0,5,0"/>
-                        <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-            <ComboBoxItem>
-                <ComboBoxItem.Content>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="https://i.ibb.co/72x5kJW/ukraine-512px.png" Width="20" Height="20"/>
-                        <TextBlock Text="  Ukraine" VerticalAlignment="Center"  FontFamily="Agency FB" FontSize="15" FontWeight="Bold"/>
-                    </StackPanel>
-                </ComboBoxItem.Content>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <ComboBoxItem.Content>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="https://i.ibb.co/yhR0nnC/poland-512px.png" Width="20" Height="20"/>
-                        <TextBlock Text="  Polski" VerticalAlignment="Center" FontFamily="Agency FB" FontWeight="Bold" FontSize="15"/>
-                    </StackPanel>
-                </ComboBoxItem.Content>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <ComboBoxItem.Content>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="https://i.ibb.co/nLqMF1r/spain-512px.png" Width="20" Height="20"/>
-                        <TextBlock Text="  Español" VerticalAlignment="Center" FontFamily="Agency FB" FontWeight="Bold" FontSize="15"/>
-                    </StackPanel>
-                </ComboBoxItem.Content>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <ComboBoxItem.Content>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="https://i.ibb.co/SfvsPwJ/USA-512px.png" Width="20" Height="20"/>
-                        <TextBlock Text="  English" VerticalAlignment="Center" FontFamily="Agency FB" FontWeight="Bold" FontSize="15"/>
-                    </StackPanel>
-                </ComboBoxItem.Content>
-            </ComboBoxItem>
-        </ComboBox>
-        </StackPanel>
-        <StackPanel Width="100" Height="100" HorizontalAlignment="Left" Margin="100,0,0,0">
-            <TextBlock Text="Theme" FontSize="25" FontFamily="Agency FB"/>
-            <ComboBox Width="100" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="{Binding ImageSource}" Width="20" Height="20" Margin="0,0,5,0"/>
-                            <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-                <ComboBoxItem>
-                    <ComboBoxItem.Content>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="https://i.ibb.co/FKKhgmy/White.png" Width="20" Height="20"/>
-                            <TextBlock Text="  White" VerticalAlignment="Center"  FontFamily="Agency FB" FontSize="15" FontWeight="Bold"/>
-                        </StackPanel>
-                    </ComboBoxItem.Content>
-                </ComboBoxItem>
-                <ComboBoxItem>
-                    <ComboBoxItem.Content>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="https://i.ibb.co/yQPnsTd/Dark.png" Width="20" Height="20"/>
-                            <TextBlock Text="  Dark" VerticalAlignment="Center"  FontFamily="Agency FB" FontSize="15" FontWeight="Bold"/>
-                        </StackPanel>
-                    </ComboBoxItem.Content>
-                </ComboBoxItem>
-            </ComboBox>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto" Height="45" Margin="120,-350,0,0" >
+        <TextBlock  Text="Setting" Style="{StaticResource TextBlock_Animated}"/>
         </StackPanel>
     </Grid>
 </Page>

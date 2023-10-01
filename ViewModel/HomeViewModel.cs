@@ -18,7 +18,7 @@ namespace Crypto_V2.ViewModel
             CryptoDataList = new ObservableCollection<CryptoModel.CryptoData>();
             LoadTop10CryptoDataAsync();
 
-            _updateTimer = new Timer(60000);
+            _updateTimer = new Timer(30000);
             _updateTimer.Elapsed += async (sender, e) => await LoadTop10CryptoDataAsync();
             _updateTimer.AutoReset = true;
             _updateTimer.Enabled = true;

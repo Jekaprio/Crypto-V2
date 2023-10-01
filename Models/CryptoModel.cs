@@ -74,6 +74,9 @@ public class CryptoModel
 
     public class CryptoData
     {
+        [JsonProperty("rank")]
+        public string Rank { get; set; }
+
         [JsonProperty("name")]
         public string Name { get; set; }
 

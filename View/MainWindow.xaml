@@ -22,39 +22,39 @@
                         Content="Home"
                         Margin="5,20,0,15"
                         Click="Home_Click"
-                        Style="{StaticResource WindowButtonStyle}"/>
+                        Style="{StaticResource ButtonStyleWithAnimation}"/>
                 <Button
                         x:Name="Datails"
                         Content="Details"
                         HorizontalAlignment="Left"
                         Margin="5,0,0,15"
                         Click="Details_Click"
-                        Style="{StaticResource WindowButtonStyle}"/>
+                        Style="{StaticResource ButtonStyleWithAnimation}"/>
                 <Button     
                         x:Name="Setting"
                         Content="Setting"
                         HorizontalAlignment="Left"
                         Margin="5,0,0,15"
                         Click="Setting_Click"
-                        Style="{StaticResource WindowButtonStyle}"/>
+                        Style="{StaticResource ButtonStyleWithAnimation}"/>
                 <Button
                         x:Name="APIbutton"
                         Content="API"
                         Click="CheckApiStatus"
                         Margin="5,0,0,15"
-                        Style="{StaticResource WindowButtonStyle}"/>
+                        Style="{StaticResource ButtonStyleWithAnimation}"/>
 
                 <Button 
                         x:Name="Exit"
                         Content="Exit"  
                         Click="CloseButton_Click"
                         Margin="5,0,0,15"
-                        Style="{StaticResource WindowButtonStyle}"
+                        Style="{StaticResource ButtonStyleWithAnimation}"
                         />
             </StackPanel>
         </Border>
 
-        <TextBlock x:Name="TextBlockHello" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" TextWrapping="Wrap" Width="700" Height="400" FontFamily="Agency FB">
+        <TextBlock  x:Name="TextBlockHello" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" TextWrapping="Wrap" Width="700" Height="400" FontFamily="Agency FB">
                 <Run Text="Introducing"/>
                 <Run Text="Crypto" FontWeight="Bold" FontStyle="Normal"/>
                 <Run Text="– your comprehensive companion in the world of cryptocurrencies. With Crypto, you get:"/>
@@ -85,7 +85,7 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
         </StackPanel>
         <Border Background="#FAEBD7" 
-                Height="20" 
+                Height="20"      
                 CornerRadius="25,25,25,25" 
                 VerticalAlignment="Top" 
                 MouseDown="TitleBar_MouseDown" 
@@ -95,6 +95,7 @@
                 HorizontalAlignment="Left" 
                 Height="Auto" 
                 Margin="730,0,0,0" >
+                <TextBlock Text="Crypto V2" VerticalAlignment="Center" Margin="-700" FontFamily="Agency FB" FontSize="15" FontWeight="Bold" Foreground="Silver"/>
             </StackPanel>
         </Border>
         <Border Background="#FAEBD7" 

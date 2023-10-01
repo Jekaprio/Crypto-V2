@@ -4,16 +4,20 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Crypto_V2.View"
-      mc:Ignorable="d" Height="350" Width="900"
+      mc:Ignorable="d" Height="400" Width="900"
       Title="Home">
 
     <Grid>
-        <StackPanel Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Stretch">
-            <ListView Style="{StaticResource ListViewKEY}"  ItemsSource="{Binding CryptoDataList}" Height="350" Width="500" Background="Transparent">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto" Height="45" Margin="120,-350,0,0" >
+            <TextBlock Text="Home" Style="{StaticResource TextBlock_Animated}"/>
+        </StackPanel>
+        <StackPanel Background="Transparent" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Margin="0,0,0,0" Width="Auto" Height="Auto">
+            <ListView Style="{StaticResource ListViewKEY}"  ItemsSource="{Binding CryptoDataList}" Background="Transparent" Height="Auto" Width="Auto" HorizontalAlignment="Center">
                 <ListView.View>
                     <GridView>
+                        <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Rank}" Width="50"/>
                         <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="100"/>
-                        <GridViewColumn Header="Symbol" DisplayMemberBinding="{Binding Symbol}" Width="100"/>
+                        <GridViewColumn Header="Symbol" DisplayMemberBinding="{Binding Symbol}" Width="75"/>
                         <GridViewColumn Header="Price USD" DisplayMemberBinding="{Binding PriceUsd}" Width="250"/>
                     </GridView>
                 </ListView.View>

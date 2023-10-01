@@ -14,7 +14,6 @@ namespace Crypto_V2
         public MainWindow()
         {
             InitializeComponent();
-           
             _httpClient = new HttpClient();
             
             this.MouseMove += Window_MouseMove;

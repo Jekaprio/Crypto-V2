@@ -1,13 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Windows;
+using System.Globalization;
+using System;
+using System.Windows.Controls;
+using static Crypto_V2.View.Setting;
+using Crypto_V2.View;
+using System.Threading;
 
 namespace Crypto_V2.ViewModel
 {
-    internal class SettingViewModel
+    
+    public class SettingViewModel
     {
-       
+        
     }
 }

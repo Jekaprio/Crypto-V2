@@ -4,11 +4,15 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
-      xmlns:local="clr-namespace:Crypto_V2.View"
+      xmlns:local="clr-namespace:Crypto_V2.Properties"
       mc:Ignorable="d" Height="Auto" Width="Auto"
       Title="Detailed">
 
     <Grid>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto" Height="45" Margin="120,-350,0,0" >
+            <TextBlock Text="Detalied" Style="{StaticResource TextBlock_Animated}"/>
+        </StackPanel>
+
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,85,0,0">
             <TextBox 
                 x:Name="Search_TextBox" 
@@ -23,7 +27,8 @@
                 ToolTip="Enter Symbol or Name cryptocurrency &#x0a; &#x0a;Example: BTC or Bitcoin"/>
             <Button 
                 x:Name="Search_Button"
-                Style="{StaticResource WindowButtonStyle}" 
+                x:Uid="Search_Button"
+                Style="{StaticResource ButtonStyleWithAnimation}" 
                 HorizontalAlignment="Center" 
                 Content="Search" 
                 Click="SearchButton_Click" 
@@ -32,6 +37,7 @@
                 Margin="0,0,0,10" />
             <TextBlock 
                 x:Name="Result_TextBlock" 
+                x:Uid="Result_TextBlock"
                 Width="Auto" 
                 Height="Auto" 
                 FontSize="25" 

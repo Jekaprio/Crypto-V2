@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:Crypto_V2" xmlns:System="clr-namespace:System;assembly=mscorlib"
              StartupUri="View/MainWindow.xaml">
     <Application.Resources>
-        <Style x:Key="WindowStyle" TargetType="Window">
+        <Style x:Key="Window_Style" TargetType="Window">
             <Setter Property="WindowStyle" Value="None"/>
             <Setter Property="AllowsTransparency" Value="True"/>
             <Setter Property="Clip">
@@ -13,7 +13,16 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="ListViewKEY" TargetType="ListView">
+        <Style x:Key="AutoRization_Style" TargetType="Window">
+            <Setter Property="WindowStyle" Value="None"/>
+            <Setter Property="AllowsTransparency" Value="True"/>
+            <Setter Property="Clip">
+                <Setter.Value>
+                    <RectangleGeometry Rect="0,0,300,300" RadiusX="25" RadiusY="50"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ListView_Style" TargetType="ListView">
             <Setter Property="Background" Value="GhostWhite" />
             <Setter Property="BorderBrush" Value="Transparent" />
             <Setter Property="BorderThickness" Value="0" />
@@ -51,10 +60,10 @@ CornerRadius="25">
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="HyperLinkStyle" TargetType="Hyperlink">
+        <Style x:Key="HyperLink_Style" TargetType="Hyperlink">
             <Setter Property="Foreground" Value="Pink" />
         </Style>
-        <Style x:Key="TextBoxStyle" TargetType="TextBox" >
+        <Style x:Key="TextBox_Style" TargetType="TextBox" >
             <Setter Property="Background" Value="#f0f0f0" />
             <Setter Property="Foreground" Value="#333" />
             <Setter Property="BorderBrush" Value="#ccc" />
@@ -97,7 +106,7 @@ CornerRadius="25">
                             <ColorAnimation
                         Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
                         From="Silver"
-                        To="#FAEBD7"
+                        To="Gray"
                         Duration="0:0:5"
                         AutoReverse="True"/>
                         </Storyboard>
@@ -105,8 +114,7 @@ CornerRadius="25">
                 </EventTrigger>
             </Style.Triggers>
         </Style>
-
-        <Style x:Key="ButtonStyleWithAnimation" TargetType="Button">
+        <Style x:Key="ButtonWithAnimation_Style" TargetType="Button">
             <Setter Property="Width" Value="60"/>
             <Setter Property="Height" Value="50"/>
             <Setter Property="Background" Value="Silver"/>
@@ -154,6 +162,153 @@ CornerRadius="25">
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="PasswordBox_Style" TargetType="PasswordBox">
+            <Setter Property="Background" Value="#f0f0f0" />
+            <Setter Property="Foreground" Value="#333" />
+            <Setter Property="BorderBrush" Value="#ccc" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="MinWidth" Value="150" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Grid>
+                            <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="10">
+                                <ScrollViewer x:Name="PART_ContentHost" />
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="PART_ContentHost" Property="Opacity" Value="0.3" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ComboBox_Style" TargetType="ComboBox">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Width" Value="200" />
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#FAEBD7" BlurRadius="25" ShadowDepth="0" Opacity="2"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <Border x:Name="ComboBoxBorder"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="10,10,10,10">
+                                <Grid>
+                                    <ToggleButton x:Name="ToggleButton"
+                                          BorderBrush="{TemplateBinding BorderBrush}"
+                                          Background="{TemplateBinding Background}"
+                                          Focusable="False"
+                                          IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          ClickMode="Press"
+                                          >
+                                        <ToggleButton.Template>
+                                            <ControlTemplate TargetType="ToggleButton">
+                                                <Grid>
+                                                    <VisualStateManager.VisualStateGroups>
+                                                        <VisualStateGroup x:Name="CommonStates">
+                                                            <VisualState x:Name="Normal" />
+                                                            <VisualState x:Name="MouseOver">
+                                                                <Storyboard>
+                                                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                                         Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)">
+                                                                        <EasingColorKeyFrame KeyTime="0" Value="Transparent" />
+                                                                    </ColorAnimationUsingKeyFrames>
+                                                                </Storyboard>
+                                                            </VisualState>
+                                                            <VisualState x:Name="Pressed">
+                                                                <Storyboard>
+                                                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                                         Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)">
+                                                                        <EasingColorKeyFrame KeyTime="0" Value="Transparent" />
+                                                                    </ColorAnimationUsingKeyFrames>
+                                                                </Storyboard>
+                                                            </VisualState>
+                                                            <VisualState x:Name="Disabled">
+                                                                <Storyboard>
+                                                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                                         Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)">
+                                                                        <EasingColorKeyFrame KeyTime="0" Value="Transparent" />
+                                                                    </ColorAnimationUsingKeyFrames>
+                                                                </Storyboard>
+                                                            </VisualState>
+                                                        </VisualStateGroup>
+                                                    </VisualStateManager.VisualStateGroups>
+                                                    <Border x:Name="Border"
+                                                    Background="Silver"
+                                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                                    BorderThickness="1"
+                                                    CornerRadius="10,10,10,10" />
+                                                    <TextBlock x:Name="ContentPresenter"
+                                                       Text="{TemplateBinding Content}"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Center"
+                                                       Margin="8,0,0,0"
+                                                       Foreground="{TemplateBinding Foreground}"
+                                                       Background="Silver"
+                                                       Padding="0,0,0,0" />
+                                                    <Path x:Name="Arrow"
+                                                  HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center"
+                                                  Margin="0,0,8,0"
+                                                  Data="M0,0 L4,4 L8,0 Z"
+                                                  Fill="{TemplateBinding Foreground}" />
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </ToggleButton.Template>
+                                    </ToggleButton>
+                                    <Popup x:Name="Popup"
+                                   AllowsTransparency="True"
+                                   IsOpen="{TemplateBinding IsDropDownOpen}"
+                                   Placement="Bottom"
+                                           Width="200"
+                                           Height="150"
+                                   PopupAnimation="Fade">
+                                        <Border x:Name="DropDownBorder"
+                                        Background="White"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="1"
+                                        CornerRadius="10,10,10,10">
+                                            <ScrollViewer SnapsToDevicePixels="True">
+                                                <ItemsPresenter />
+                                            </ScrollViewer>
+                                        </Border>
+                                    </Popup>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            
+                            
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+
+
     </Application.Resources>
     
 </Application>

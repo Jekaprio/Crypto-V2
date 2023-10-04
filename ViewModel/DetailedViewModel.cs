@@ -8,6 +8,7 @@ namespace Crypto_V2.ViewModel
     internal class DetailedViewModel
     {
         private readonly CryptoModel _cryptoModel;
+
         public ObservableCollection<CryptoModel.CryptoData> CryptoDataList { get; set; }
 
         public DetailedViewModel()

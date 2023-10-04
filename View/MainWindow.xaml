@@ -5,9 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Crypto V2"  WindowStyle="None" AllowsTransparency="True" Height="500" Width="900"
-        Style="{StaticResource WindowStyle}">
+        Style="{StaticResource Window_Style}">
 
-    <Grid Height="485" VerticalAlignment="Top" Margin="0,0,-25,0" Background="Transparent">
+    <Grid Name="MainGrid" Height="485" VerticalAlignment="Top" Margin="0,0,-25,0" Background="Transparent" Opacity="0">
+
+        <Grid.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetName="MainGrid" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:2"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Grid.Triggers>
         
         <Border HorizontalAlignment="Left" 
                 Margin="0,60,0,0" 
@@ -15,73 +25,81 @@
                 Background="WhiteSmoke"  
                 BorderThickness="2"  
                 CornerRadius="25,25,25,25" 
-                Width="75" Height="350">
-            <StackPanel Width="242">
+                Width="90" Height="350">
+            <StackPanel Width="242" Name="Menu">
                 <Button
-                        x:Name="Home"
+                        Name="Home_Button"
                         Content="Home"
                         Margin="5,20,0,15"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
                         Click="Home_Click"
-                        Style="{StaticResource ButtonStyleWithAnimation}"/>
+                        Width="75"
+                        Style="{StaticResource ButtonWithAnimation_Style}"/>
                 <Button
-                        x:Name="Datails"
+                        Name="Details_Button"
                         Content="Details"
                         HorizontalAlignment="Left"
                         Margin="5,0,0,15"
                         Click="Details_Click"
-                        Style="{StaticResource ButtonStyleWithAnimation}"/>
+                        Width="75"
+                        Style="{StaticResource ButtonWithAnimation_Style}"/>
                 <Button     
-                        x:Name="Setting"
+                        Name="Setting_Button"
                         Content="Setting"
                         HorizontalAlignment="Left"
                         Margin="5,0,0,15"
                         Click="Setting_Click"
-                        Style="{StaticResource ButtonStyleWithAnimation}"/>
+                        Width="75"
+                        Style="{StaticResource ButtonWithAnimation_Style}"/>
                 <Button
-                        x:Name="APIbutton"
+                        Name="API_Button"
                         Content="API"
                         Click="CheckApiStatus"
                         Margin="5,0,0,15"
-                        Style="{StaticResource ButtonStyleWithAnimation}"/>
+                        Width="75"
+                        Style="{StaticResource ButtonWithAnimation_Style}"/>
 
                 <Button 
-                        x:Name="Exit"
+                        Name="Exit_Button"
                         Content="Exit"  
                         Click="CloseButton_Click"
                         Margin="5,0,0,15"
-                        Style="{StaticResource ButtonStyleWithAnimation}"
+                        Width="75"
+                        Style="{StaticResource ButtonWithAnimation_Style}"
                         />
             </StackPanel>
         </Border>
-
-        <TextBlock  x:Name="TextBlockHello" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" TextWrapping="Wrap" Width="700" Height="400" FontFamily="Agency FB">
-                <Run Text="Introducing"/>
+        <Border Background="WhiteSmoke" Width="700" Height="400" CornerRadius="25,25,25,25">
+        <StackPanel Margin="0,0,0,0"  Width="750" Height="400" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock  Name="TextBlockHello" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" TextWrapping="Wrap" Width="700" Height="400" FontFamily="Agency FB">
+                <LineBreak/>
+            <Run Text="   Introducing"/>
                 <Run Text="Crypto" FontWeight="Bold" FontStyle="Normal"/>
                 <Run Text="– your comprehensive companion in the world of cryptocurrencies. With Crypto, you get:"/>
             <LineBreak/>
             <LineBreak/>
-                <Run Text="Exploration:" FontWeight="Bold" FontStyle="Normal"/>
+                <Run Text="   Exploration:" FontWeight="Bold" FontStyle="Normal"/>
                 <Run Text="Dive into the world of digital currencies. Explore the latest cryptocurrencies, including market prices, trading volumes, and historical data."/>
             <LineBreak/>
             <LineBreak/>
-                <Run Text="Conversion:" FontWeight="Bold" FontStyle="Normal"/>
+                <Run Text="   Conversion:" FontWeight="Bold" FontStyle="Normal"/>
                 <Run Text="Convert one cryptocurrency to another with ease. Calculate exchange rates and switch between different cryptocurrencies effortlessly."/>
             <LineBreak/>
             <LineBreak/>
-                <Run Text="Effortless Search:" FontWeight="Bold" FontStyle="Normal"/>
+                <Run Text="   Effortless Search:" FontWeight="Bold" FontStyle="Normal"/>
                 <Run Text="Find specific cryptocurrencies quickly. Our intuitive search helps you stay informed." />
             <LineBreak/>
             <LineBreak/>
-                <Run Text="Visualize Trends:" FontWeight="Bold" FontStyle="Normal"/>
+                <Run Text="   Visualize Trends:" FontWeight="Bold" FontStyle="Normal"/>
                 <Run Text="Understand cryptocurrency trends with interactive charts. Monitor price fluctuations and make informed decisions."/>
             <LineBreak/>
+           
             <LineBreak/>
-                <Run Text="Customization:" FontWeight="Bold" FontStyle="Normal"/>
-                <Run Text="Personalize your experience. Choose languages and themes that match your style."/>
-            <LineBreak/>
-            <LineBreak/>
-            <Run Text="Crypto is your trusted partner in the cryptocurrency world, whether you're an enthusiast, investor, or simply curious. Explore, convert, and thrive with Crypto."/>
+            <Run Text="   Crypto is your trusted partner in the cryptocurrency world, whether you're an enthusiast, investor, or simply curious. Explore, convert, and thrive with Crypto."/>
         </TextBlock>
+        </StackPanel>
+        </Border>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
         </StackPanel>
         <Border Background="#FAEBD7" 
@@ -104,6 +122,7 @@
                 VerticalAlignment="Bottom" 
                 Margin="0,0,25,0">
         </Border>
+      
         <Frame Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

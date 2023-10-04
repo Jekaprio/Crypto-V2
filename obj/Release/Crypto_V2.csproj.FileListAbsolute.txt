@@ -1,0 +1,39 @@
+C:\PROJECT\Crypto V2\Crypto V2\bin\Release\Crypto V2.exe.config
+C:\PROJECT\Crypto V2\Crypto V2\bin\Release\Crypto V2.exe
+C:\PROJECT\Crypto V2\Crypto V2\bin\Release\Crypto V2.pdb
+C:\PROJECT\Crypto V2\Crypto V2\bin\Release\ControlzEx.dll
+C:\PROJECT\Crypto V2\Crypto V2\bin\Release\LiveCharts.dll
+C:\PROJECT\Crypto V2\Crypto V2\bin\Release\LiveCharts.Wpf.dll
+C:\PROJECT\Crypto V2\Crypto V2\bin\Release\Microsoft.Xaml.Behaviors.dll
+C:\PROJECT\Crypto V2\Crypto V2\bin\Release\Newtonsoft.Json.dll
+C:\PROJECT\Crypto V2\Crypto V2\bin\Release\ControlzEx.pdb
+C:\PROJECT\Crypto V2\Crypto V2\bin\Release\ControlzEx.xml
+C:\PROJECT\Crypto V2\Crypto V2\bin\Release\LiveCharts.pdb
+C:\PROJECT\Crypto V2\Crypto V2\bin\Release\LiveCharts.xml
+C:\PROJECT\Crypto V2\Crypto V2\bin\Release\LiveCharts.Wpf.pdb
+C:\PROJECT\Crypto V2\Crypto V2\bin\Release\LiveCharts.Wpf.xml
+C:\PROJECT\Crypto V2\Crypto V2\bin\Release\Microsoft.Xaml.Behaviors.pdb
+C:\PROJECT\Crypto V2\Crypto V2\bin\Release\Microsoft.Xaml.Behaviors.xml
+C:\PROJECT\Crypto V2\Crypto V2\bin\Release\Newtonsoft.Json.xml
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\Crypto_V2.csproj.AssemblyReference.cache
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\View\MainWindow.baml
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\View\Detailed.g.cs
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\View\Home.g.cs
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\View\MainWindow.g.cs
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\View\Setting.g.cs
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\View\Autorization.g.cs
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\App.g.cs
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\Crypto V2_MarkupCompile.cache
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\Crypto V2_MarkupCompile.lref
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\App.baml
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\View\Detailed.baml
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\View\Home.baml
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\View\Setting.baml
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\View\Autorization.baml
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\Crypto V2.g.resources
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\Crypto_V2.Properties.Resources.resources
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\Crypto_V2.csproj.GenerateResource.cache
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\Crypto_V2.csproj.CoreCompileInputs.cache
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\Crypto_V2.csproj.CopyComplete
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\Crypto V2.exe
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\Crypto V2.pdb

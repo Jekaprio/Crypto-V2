@@ -9,13 +9,16 @@ namespace Crypto_V2
 {
     public partial class MainWindow : Window
     {
+        public static MainWindow Instance;
         public readonly HttpClient _httpClient;
 
         public MainWindow()
         {
+
             InitializeComponent();
+            Instance = this;
             _httpClient = new HttpClient();
-            
+
             this.MouseMove += Window_MouseMove;
             this.MouseUp += Window_MouseUp;
         }
@@ -47,16 +50,16 @@ namespace Crypto_V2
 
         private void TitleBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if(e.ChangedButton == MouseButton.Left) 
+            if (e.ChangedButton == MouseButton.Left)
             {
                 isDraggind = true;
                 startPoint = e.GetPosition(this);
             }
         }
 
-        private void Window_MouseMove(object sender, MouseEventArgs e) 
+        private void Window_MouseMove(object sender, MouseEventArgs e)
         {
-            if(isDraggind)
+            if (isDraggind)
             {
                 Point endPoint = e.GetPosition(this);
                 double offsetX = endPoint.X - startPoint.X;
@@ -69,13 +72,13 @@ namespace Crypto_V2
 
         private void Window_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            if(e.ChangedButton != MouseButton.Left) 
+            if (e.ChangedButton != MouseButton.Left)
             {
                 isDraggind = false;
             }
         }
 
-       private void Home_Click(object sender, RoutedEventArgs e)  // Відкрити сторінку Home
+        private void Home_Click(object sender, RoutedEventArgs e)  // Відкрити сторінку Home
         {
             MainFrame.Navigate(new Uri("View/Home.xaml", UriKind.Relative));
             TextBlockHello.Background = Brushes.Transparent;
@@ -93,8 +96,10 @@ namespace Crypto_V2
         {
             MainFrame.Navigate(new Uri("View/Setting.xaml", UriKind.Relative));
             TextBlockHello.Background = Brushes.Transparent;
-            TextBlockHello.Foreground = Brushes.Transparent; 
+            TextBlockHello.Foreground = Brushes.Transparent;
         }
+
     }
+
 }
 

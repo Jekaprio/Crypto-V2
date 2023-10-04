@@ -11,7 +11,6 @@ C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\Crypto V2.pdb
 C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\ControlzEx.dll
 C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\Microsoft.Xaml.Behaviors.dll
 C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\Newtonsoft.Json.dll
-C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\ControlzEx.pdb
 C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\ControlzEx.xml
 C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\Microsoft.Xaml.Behaviors.xml
@@ -35,3 +34,14 @@ C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\LiveCharts.pdb
 C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\LiveCharts.xml
 C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\LiveCharts.Wpf.pdb
 C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\LiveCharts.Wpf.xml
+C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\View\Autorization.g.cs
+C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\View\Autorization.baml
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\Properties\users.json
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\App.xaml.cs
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\App.config
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\Properties\Resources.resx
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\Properties\Resources.Designer.cs
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\Properties\Settings.Designer.cs
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\Properties\Settings.settings
+C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\View\CreateUserWindow.g.cs
+C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\View\CreateUserWindow.baml

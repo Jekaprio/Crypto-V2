@@ -3,14 +3,32 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Crypto_V2.ViewModel"
       mc:Ignorable="d" 
-    
       Title="Setting">
 
-    <Grid>
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto" Height="45" Margin="120,-350,0,0" >
-        <TextBlock  Text="Setting" Style="{StaticResource TextBlock_Animated}"/>
-        </StackPanel>
+    <Page.Resources>
+        <Storyboard x:Key="PageEnterAnimation">
+            <DoubleAnimation Storyboard.TargetName="ContentGrid" 
+                             Storyboard.TargetProperty="Opacity"
+                             From="0" To="1" Duration="0:0:2"/>
+        </Storyboard>
+    </Page.Resources>
+
+    <Grid x:Name="ContentGrid" Opacity="0">
+
+        <Border Background="WhiteSmoke" Width="700" Height="400" CornerRadius="25,25,25,25">
+            <StackPanel>
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto" Height="45" Margin="45,0,0,25" >
+                    <TextBlock Name="TextBlock_Setting" Text="Setting" Style="{StaticResource TextBlock_Animated}"/>
+                </StackPanel>
+                <StackPanel Width="Auto" Height="400" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="120,0,0,0">
+                    <TextBlock Name="Account_TextBlock" Text="Account" FontSize="25" Margin="-50,0,0,10" FontWeight="UltraLight" FontFamily="Agency FB"/>
+                    <Button    Name="Changeuser_Button" Content="Change new User" Width="200" Margin="-25,0,0,25" Height="30" Style="{StaticResource ButtonWithAnimation_Style}" FontSize="20"/>
+                    <TextBlock Name="View_TextBlock" Text="View(Menu item)" FontSize="25" Margin="-50,0,0,0" FontWeight="UltraLight" FontFamily="Agency FB"/>
+                    <ComboBox  Style="{StaticResource ComboBox_Style}" Margin="-25,10,0,0"  Name="FontComboBox" SelectionChanged="FontComboBox_SelectionChanged"/>
+
+                </StackPanel>
+            </StackPanel>
+        </Border>
     </Grid>
 </Page>

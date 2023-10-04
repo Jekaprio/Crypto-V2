@@ -7,12 +7,20 @@
       mc:Ignorable="d" Height="400" Width="900"
       Title="Home">
 
-    <Grid>
+    <Page.Resources>
+        <!-- Оголосіть анімацію для затемнення (Opacity) -->
+        <Storyboard x:Key="PageEnterAnimation">
+            <DoubleAnimation Storyboard.TargetName="ContentGrid" 
+                          Storyboard.TargetProperty="Opacity"
+                          From="0" To="1" Duration="0:0:2"/>
+        </Storyboard>
+    </Page.Resources>
+    <Grid x:Name="ContentGrid">
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto" Height="45" Margin="120,-350,0,0" >
-            <TextBlock Text="Home" Style="{StaticResource TextBlock_Animated}"/>
+            <TextBlock Name="Home_TextBlock" Text="Home" Style="{StaticResource TextBlock_Animated}" Margin="25,0,0,0"/>
         </StackPanel>
         <StackPanel Background="Transparent" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Margin="0,0,0,0" Width="Auto" Height="Auto">
-            <ListView Style="{StaticResource ListViewKEY}"  ItemsSource="{Binding CryptoDataList}" Background="Transparent" Height="Auto" Width="Auto" HorizontalAlignment="Center">
+            <ListView Style="{StaticResource ListView_Style}"  ItemsSource="{Binding CryptoDataList}" Background="Transparent" Height="Auto" Width="Auto" HorizontalAlignment="Center">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Rank}" Width="50"/>

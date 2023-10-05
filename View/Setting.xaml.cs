@@ -1,4 +1,7 @@
 ﻿using Crypto_V2.ViewModel;
+using System.IO;
+using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
@@ -30,9 +33,6 @@ namespace Crypto_V2.View
             }
         }
 
-
-
-
         public void FontComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string selectedFontName = FontComboBox.SelectedItem.ToString();
@@ -55,7 +55,34 @@ namespace Crypto_V2.View
                 mainWindow.TextBlockHello.FontFamily = selectedFontFamily;
             }
         }
-    }
 
+        public void Privacy_click(object sedner, RoutedEventArgs e)
+        {
+            string privacyPolicyText = File.ReadAllText("Properties/Privacy_Policy.txt");
+            string MitLicenseText = File.ReadAllText("Properties/MIT_License.txt");
+            try
+            {
+                MessageBox.Show(privacyPolicyText, "Privacy Policy", MessageBoxButton.OK);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error opening Privacy Policy, contact JEKARPIO.", "Error" + ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        public void MIT_click(object sedner, RoutedEventArgs e)
+        {
+            string privacyPolicyText = File.ReadAllText("Properties/Privacy_Policy.txt");
+            string MitLicenseText = File.ReadAllText("Properties/MIT_License.txt");
+            try
+            {
+                MessageBox.Show(MitLicenseText, "MIT License", MessageBoxButton.OK);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error opening License, contact JEKARPIO.", "Error" + ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+    }
 }
 

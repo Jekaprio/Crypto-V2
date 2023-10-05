@@ -36,7 +36,6 @@ C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\LiveCharts.Wpf.pdb
 C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\LiveCharts.Wpf.xml
 C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\View\Autorization.g.cs
 C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\View\Autorization.baml
-C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\Properties\users.json
 C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\App.xaml.cs
 C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\App.config
 C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\Properties\Resources.resx
@@ -45,3 +44,16 @@ C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\Properties\Settings.Designer.cs
 C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\Properties\Settings.settings
 C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\View\CreateUserWindow.g.cs
 C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\View\CreateUserWindow.baml
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\BouncyCastle.Crypto.dll
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\PdfSharp.Charting.dll
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\PdfSharp.dll
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\PdfSharp.xml
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\PdfSharp.Charting.xml
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\de\PdfSharp.resources.dll
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\de\PdfSharp.Charting.resources.dll
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\itextsharp.dll
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\itextsharp.xml
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\Crypto V2.exe.manifest
+C:\PROJECT\Crypto V2\Crypto V2\bin\Debug\Crypto V2.application
+C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\Crypto V2.exe.manifest
+C:\PROJECT\Crypto V2\Crypto V2\obj\Debug\Crypto V2.application

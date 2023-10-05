@@ -8,9 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/poland(512px).png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/spain(512px).png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/ukraine(512px).png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/usa(512px).png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("properties/mit_license.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("properties/privacy_policy.txt")]
 
 

@@ -1,10 +1,1 @@
-[
-  {
-    "Username": "Yevhenii",
-    "Password": "123"
-  },
-  {
-    "Username": "Петро",
-    "Password": "741521"
-  }
-]
+[{"Username":"Yevhenii","Password":"123"},{"Username":"Петро","Password":"741521"},{"Username":"Artem","Password":"123"}]

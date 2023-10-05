@@ -1,5 +1,8 @@
 ﻿using Crypto_V2.ViewModel;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
 using System;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,7 +13,6 @@ using static CryptoModel;
 
 namespace Crypto_V2.View
 {
-
     public partial class Detailed : Page
     {
         public static Detailed Instance;
@@ -65,5 +67,95 @@ namespace Crypto_V2.View
             e.Handled = true;
         }
 
+
+
+        private void SaveToPdfButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Показываем диалог выбора папки
+            var folderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            System.Windows.Forms.DialogResult result = folderDialog.ShowDialog();
+
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                string selectedFolderPath = folderDialog.SelectedPath;
+
+                // Создаем документ PDF
+                PdfDocument doc = new PdfDocument();
+                doc.Info.Title = "Crypto Details";
+
+                // Создаем страницу PDF
+                PdfPage page = doc.AddPage();
+                XGraphics gfx = XGraphics.FromPdfPage(page);
+                XFont font = new XFont("Agency FB", 20);
+
+                // Загружаем иконку ICO
+                string iconPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Properties", "IMG.ico");
+                XImage iconImage = XImage.FromFile(iconPath);
+
+                double iconWidth = 40;
+                double iconHeight = 40;
+                double iconX = 20;
+                double iconY = 20;
+
+                gfx.DrawImage(iconImage, iconX, iconY, iconWidth, iconHeight);
+
+                // Получаем текущую дату и время
+                DateTime now = DateTime.Now;
+                string currentDate = $"Date: {now:yyyy-MM-dd}";
+                string currentTime = $"Time: {now:HH:mm:ss}";
+
+                double textX = iconX + iconWidth + 10;
+                double textY = iconY + 10;
+
+                gfx.DrawString("Crypto V2", font, XBrushes.Black, textX, textY);
+                textY += 30;
+
+                gfx.DrawString(currentDate, font, XBrushes.Black, textX, textY);
+                textY += 20;
+
+                gfx.DrawString(currentTime, font, XBrushes.Black, textX, textY);
+
+                double x = 80;
+                double y = 150;
+
+                // Рисуем содержимое Result_TextBlock
+                string resultText = Result_TextBlock.Text.ToString();
+
+                // Разделяем текст на строки
+                string[] lines = resultText.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+
+                // Рисуем каждую строку отдельно
+                foreach (string line in lines)
+                {
+                    gfx.DrawString(line, font, XBrushes.Black, x, y);
+                    y += 20; // Увеличьте это значение, чтобы установить расстояние между строками
+                }
+
+                // Генерируем имя файла
+                string fileName = $"CryptoDetails_{DateTime.Now:yyyy-MM-dd HH-mm-ss}.pdf";
+
+                // Полный путь к файлу
+                string filePath = Path.Combine(selectedFolderPath, fileName);
+
+                try
+                {
+                    // Сохраняем PDF
+                    doc.Save(filePath);
+
+                    // Открываем PDF
+                    System.Diagnostics.Process.Start(filePath);
+                }
+                catch (Exception ex)
+                {
+                    // Обработка ошибок
+                    MessageBox.Show($"Ошибка при сохранении в PDF: {ex.Message}");
+                }
+            }
+        }
     }
+
+
+    
+
 }
+

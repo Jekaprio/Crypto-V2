@@ -24,7 +24,7 @@
             <TextBlock Name="Detailed_TextBlock" Text="Detalied" Style="{StaticResource TextBlock_Animated}"/>
         </StackPanel>
 
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,85,0,0">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Height="250" Width="Auto">
             <TextBox 
                 Name="Search_TextBox" 
                 Style="{StaticResource TextBox_Style}"
@@ -46,13 +46,22 @@
                 Height="Auto" 
                 Width="65" 
                 Margin="0,0,0,10" />
-            <TextBlock 
+                    <TextBlock 
                 Name="Result_TextBlock" 
-                Width="Auto" 
-                Height="Auto" 
+                        HorizontalAlignment="Center"
                 FontSize="25" 
                 FontFamily="Agency FB"/>
-        </StackPanel>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right" >
+                    <Button 
+
+Content="Save"
+Margin="120,63,0,0"
+Width="75" 
+Height="40"
+Click="SaveToPdfButton_Click" 
+Style="{StaticResource ButtonWithAnimation_Style}"/>
+                </StackPanel>
             </StackPanel>
         </Border>
     </Grid>

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-
 public class CryptoModel
 {
     private readonly HttpClient _httpClientCoinCap;

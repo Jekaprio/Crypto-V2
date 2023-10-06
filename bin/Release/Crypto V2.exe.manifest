@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Crypto V2.exe" size="197632">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Crypto V2.exe" size="188416">
       <assemblyIdentity name="Crypto V2" version="0.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5Hp5uur/1w3RVJGZBlYEth0LyRARyiHWZlb5yfUYvBM=</dsig:DigestValue>
+        <dsig:DigestValue>Nj4KU6wMeRrA1Yjb8Fnf9wtgbm4xU+NJtzYVrPBhvWw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

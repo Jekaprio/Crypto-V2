@@ -17,14 +17,30 @@
     
     
     <Grid x:Name="ContentGrid">
-        <Border Background="WhiteSmoke" Width="700" Height="400" CornerRadius="25,25,25,25">
+        <Border 
+            Background="WhiteSmoke" 
+            Width="700" 
+            Height="400" 
+            CornerRadius="25,25,25,25">
 
             <StackPanel>
-        <StackPanel HorizontalAlignment="Left" Width="Auto" Height="45" Margin="45,0,0,0" >
-            <TextBlock Name="Detailed_TextBlock" Text="Detalied" Style="{StaticResource TextBlock_Animated}"/>
+        <StackPanel 
+            HorizontalAlignment="Left" 
+            Width="Auto" 
+            Height="45" 
+            Margin="45,0,0,0" >
+            <TextBlock 
+                Name="Detailed_TextBlock" 
+                Text="Detalied" 
+                Style="{StaticResource TextBlock_Animated}"/>
         </StackPanel>
 
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Height="250" Width="Auto">
+        <StackPanel 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
+            Margin="0,0,0,0" 
+            Height="250" 
+            Width="Auto">
             <TextBox 
                 Name="Search_TextBox" 
                 Style="{StaticResource TextBox_Style}"
@@ -46,21 +62,20 @@
                 Height="Auto" 
                 Width="65" 
                 Margin="0,0,0,10" />
-                    <TextBlock 
+            <TextBlock 
                 Name="Result_TextBlock" 
-                        HorizontalAlignment="Center"
+                HorizontalAlignment="Center"
                 FontSize="25" 
                 FontFamily="Agency FB"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right" >
-                    <Button 
-
-Content="Save"
-Margin="120,63,0,0"
-Width="75" 
-Height="40"
-Click="SaveToPdfButton_Click" 
-Style="{StaticResource ButtonWithAnimation_Style}"/>
+                   <Button 
+                Content="Save"
+                Margin="120,63,0,0"
+                Width="75" 
+                Height="40"
+                Click="SaveToPdfButton_Click" 
+                Style="{StaticResource ButtonWithAnimation_Style}"/>
                 </StackPanel>
             </StackPanel>
         </Border>

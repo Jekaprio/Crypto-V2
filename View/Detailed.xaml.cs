@@ -9,7 +9,6 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media.Animation;
 using System.Windows.Navigation;
-using static CryptoModel;
 
 namespace Crypto_V2.View
 {
@@ -17,7 +16,7 @@ namespace Crypto_V2.View
     {
         public static Detailed Instance;
         private readonly CryptoModel _cryptoModel;
-       
+
         public Detailed()
         {
             InitializeComponent();
@@ -25,11 +24,9 @@ namespace Crypto_V2.View
             _cryptoModel = new CryptoModel();
             DetailedViewModel viewModel = new DetailedViewModel();
             DataContext = viewModel;
-
             Storyboard animation = (Storyboard)FindResource("PageEnterAnimation");
             if (animation != null)
             {
-                // Запустіть анімацію
                 animation.Begin(ContentGrid);
             }
         }
@@ -44,8 +41,8 @@ namespace Crypto_V2.View
                 Result_TextBlock.Inlines.Clear();
                 Result_TextBlock.Inlines.Add(new Bold(new Run("Cryptocurrency found:  ")));
                 Hyperlink hyperlink = new Hyperlink(new Run($"{foundCrypto.Name} ({foundCrypto.Symbol})"));
-                hyperlink.NavigateUri = new Uri(foundCrypto.explorer); 
-                hyperlink.RequestNavigate += Hyperlink_RequestNavigate; 
+                hyperlink.NavigateUri = new Uri(foundCrypto.explorer);
+                hyperlink.RequestNavigate += Hyperlink_RequestNavigate;
                 hyperlink.Style = (Style)Application.Current.Resources["HyperLink_Style"];
                 Result_TextBlock.Inlines.Add(hyperlink);
                 Result_TextBlock.Inlines.Add(new LineBreak());
@@ -58,7 +55,7 @@ namespace Crypto_V2.View
             else
             {
                 Result_TextBlock.Text = "No cryptocurrency found";
-            }   
+            }
         }
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
@@ -67,28 +64,19 @@ namespace Crypto_V2.View
             e.Handled = true;
         }
 
-
-
         private void SaveToPdfButton_Click(object sender, RoutedEventArgs e)
         {
-            // Показываем диалог выбора папки
             var folderDialog = new System.Windows.Forms.FolderBrowserDialog();
             System.Windows.Forms.DialogResult result = folderDialog.ShowDialog();
 
             if (result == System.Windows.Forms.DialogResult.OK)
             {
                 string selectedFolderPath = folderDialog.SelectedPath;
-
-                // Создаем документ PDF
                 PdfDocument doc = new PdfDocument();
                 doc.Info.Title = "Crypto Details";
-
-                // Создаем страницу PDF
                 PdfPage page = doc.AddPage();
                 XGraphics gfx = XGraphics.FromPdfPage(page);
                 XFont font = new XFont("Agency FB", 20);
-
-                // Загружаем иконку ICO
                 string iconPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Properties", "IMG.ico");
                 XImage iconImage = XImage.FromFile(iconPath);
 
@@ -98,9 +86,8 @@ namespace Crypto_V2.View
                 double iconY = 20;
 
                 gfx.DrawImage(iconImage, iconX, iconY, iconWidth, iconHeight);
-
-                // Получаем текущую дату и время
                 DateTime now = DateTime.Now;
+
                 string currentDate = $"Date: {now:yyyy-MM-dd}";
                 string currentTime = $"Time: {now:HH:mm:ss}";
 
@@ -109,53 +96,39 @@ namespace Crypto_V2.View
 
                 gfx.DrawString("Crypto V2", font, XBrushes.Black, textX, textY);
                 textY += 30;
-
                 gfx.DrawString(currentDate, font, XBrushes.Black, textX, textY);
                 textY += 20;
-
                 gfx.DrawString(currentTime, font, XBrushes.Black, textX, textY);
 
                 double x = 80;
-                double y = 150;
+                double y = 150; 
 
-                // Рисуем содержимое Result_TextBlock
                 string resultText = Result_TextBlock.Text.ToString();
-
-                // Разделяем текст на строки
                 string[] lines = resultText.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
-                // Рисуем каждую строку отдельно
                 foreach (string line in lines)
                 {
                     gfx.DrawString(line, font, XBrushes.Black, x, y);
-                    y += 20; // Увеличьте это значение, чтобы установить расстояние между строками
+                    y += 20; 
                 }
 
-                // Генерируем имя файла
                 string fileName = $"CryptoDetails_{DateTime.Now:yyyy-MM-dd HH-mm-ss}.pdf";
 
-                // Полный путь к файлу
                 string filePath = Path.Combine(selectedFolderPath, fileName);
 
                 try
                 {
-                    // Сохраняем PDF
                     doc.Save(filePath);
 
-                    // Открываем PDF
                     System.Diagnostics.Process.Start(filePath);
                 }
                 catch (Exception ex)
                 {
-                    // Обработка ошибок
-                    MessageBox.Show($"Ошибка при сохранении в PDF: {ex.Message}");
+                    MessageBox.Show($"Error when saving to PDF: {ex.Message}");
                 }
             }
         }
     }
-
-
-    
 
 }
 

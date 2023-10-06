@@ -8,41 +8,58 @@
       Title="Home">
 
     <Page.Resources>
-        <!-- Оголосіть анімацію для затемнення (Opacity) -->
         <Storyboard x:Key="PageEnterAnimation">
             <DoubleAnimation Storyboard.TargetName="ContentGrid" 
                           Storyboard.TargetProperty="Opacity"
                           From="0" To="1" Duration="0:0:2"/>
         </Storyboard>
     </Page.Resources>
+    
     <Grid x:Name="ContentGrid">
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto" Height="45" Margin="120,-350,0,0" >
-            <TextBlock Name="Home_TextBlock" Text="Home" Style="{StaticResource TextBlock_Animated}" Margin="25,0,0,0"/>
+        <StackPanel 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center"
+            Width="Auto" 
+            Height="45"
+            Margin="120,-350,0,0" >
+            <TextBlock 
+                Name="Home_TextBlock" 
+                Text="Home" 
+                Style="{StaticResource TextBlock_Animated}" 
+                Margin="25,0,0,0"/>
         </StackPanel>
-        <StackPanel Background="Transparent" HorizontalAlignment="Center"  VerticalAlignment="Bottom"  Width="Auto" Height="Auto">
-            <ListView x:Name="Top10List" Margin="0,0,0,-25 " Style="{StaticResource ListView_Style}"  ItemsSource="{Binding CryptoDataList}" Background="Transparent" Height="Auto" Width="Auto" HorizontalAlignment="Center">
+        <StackPanel 
+            Background="Transparent" 
+            HorizontalAlignment="Center"  
+            VerticalAlignment="Bottom"  
+            Width="Auto" 
+            Height="Auto">
+            <ListView x:Name="Top10List" 
+                      Margin="0,0,0,-25 " Style="{StaticResource ListView_Style}"  
+                      ItemsSource="{Binding CryptoDataList}" Background="Transparent" 
+                      Height="Auto" Width="Auto" HorizontalAlignment="Center">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Rank}" Width="50"/>
-                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="100"/>
-                        <GridViewColumn Header="Symbol" DisplayMemberBinding="{Binding Symbol}" Width="75"/>
-                        <GridViewColumn Header="Price USD" DisplayMemberBinding="{Binding PriceUsd}" Width="250"/>
+                        <GridViewColumn Header="Id" 
+                                        DisplayMemberBinding="{Binding Rank}" Width="50"/>
+                        <GridViewColumn Header="Name" 
+                                        DisplayMemberBinding="{Binding Name}" Width="100"/>
+                        <GridViewColumn Header="Symbol" 
+                                        DisplayMemberBinding="{Binding Symbol}" Width="75"/>
+                        <GridViewColumn Header="Price USD" 
+                                        DisplayMemberBinding="{Binding PriceUsd}" Width="250"/>
                     </GridView>
                 </ListView.View>
             </ListView>
-
             <Button 
- Content="Save" 
- Width="75" 
- Height="40" 
- Click="SaveToPdfButton_Click" 
- Style="{StaticResource ButtonWithAnimation_Style}"
-VerticalAlignment="Bottom"
-HorizontalAlignment="Center"
-        Margin="620,0,0,0"
-/>
+                    Content="Save" 
+                    Width="75" 
+                    Height="40" 
+                    Click="SaveToPdfButton_Click" 
+                    Style="{StaticResource ButtonWithAnimation_Style}"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center"
+                    Margin="620,0,0,0"/>
         </StackPanel>
-       
-
     </Grid>
 </Page>

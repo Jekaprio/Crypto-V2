@@ -6,18 +6,20 @@
         xmlns:local="clr-namespace:Crypto_V2.View"
         mc:Ignorable="d"
         Title="Autorization" Height="300" Width="300" Style="{StaticResource AutoRization_Style}">
+    
     <Grid>
-        <Border Background="#FAEBD7" 
-        Height="20"      
-        CornerRadius="25,25,25,25" 
-        VerticalAlignment="Top" 
-        MouseDown="TitleBar_MouseDown" 
-        Margin="0,0,0,0">
+        <Border 
+            Background="#FAEBD7" 
+            Height="20"      
+            CornerRadius="25,25,25,25" 
+            VerticalAlignment="Top" 
+            MouseDown="TitleBar_MouseDown" 
+            Margin="0,0,0,0">
             <StackPanel 
-        Orientation="Horizontal" 
-        HorizontalAlignment="Left" 
-        Height="Auto" 
-        Margin="730,0,0,0" >
+            Orientation="Horizontal" 
+            HorizontalAlignment="Left" 
+            Height="Auto" 
+            Margin="730,0,0,0" >
                 <TextBlock 
                     Name="Autorization_TextBlock"
                     Text="Autorization" 
@@ -30,12 +32,18 @@
                    />
             </StackPanel>
         </Border>
-        <Border Background="#FAEBD7" 
-        Height="20"
-        CornerRadius="25,25,25,25" 
-        VerticalAlignment="Bottom"
+        <Border 
+            Background="#FAEBD7" 
+            Height="20"
+            CornerRadius="25,25,25,25" 
+            VerticalAlignment="Bottom"
        />
-        <StackPanel Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,55,0,0">
+        <StackPanel 
+            Width="Auto" 
+            Height="Auto" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" 
+            Margin="0,55,0,0">
             <TextBox 
                 ToolTip="Enter Username"
                 Name="Login_TextBox"
@@ -59,8 +67,13 @@
                 Style="{StaticResource PasswordBox_Style}"
                 />
         </StackPanel>
-        <StackPanel Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,-95">
-        <Button
+        <StackPanel 
+            Width="Auto" 
+            Height="Auto" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
+            Margin="0,0,0,-95">
+            <Button
                 Name="Login_Button"
                 Width="80"
                 Height="Auto"
@@ -68,26 +81,24 @@
                 HorizontalAlignment="Center"
                 Margin="0,0,0,10"
                 Style="{StaticResource ButtonWithAnimation_Style}"
-            Click="Button_Click"/>
-
-        <Button 
-            Name="CreateAccount_Button"
-            Content="Create account" 
-            Width="150"
-            Height="Auto" 
-            HorizontalAlignment="Center"
-            Margin="0,0,0,10"
-            Click="CreateAccount_Click" 
-            Style="{StaticResource ButtonWithAnimation_Style}"/>
+                Click="Login_Click"/>
             <Button 
-             Name="Exit_Button"
-             Content="Exit"
-             Width="80"
-             Height="Auto"
-             HorizontalAlignment="Center"
-             
-             Style="{StaticResource ButtonWithAnimation_Style}"
-                Click="Exit_Click"/>
+                Name="CreateAccount_Button"
+                Content="Create account" 
+                Width="150"
+                Height="Auto" 
+                HorizontalAlignment="Center"
+                Margin="0,0,0,10"
+                Click="CreateAccount_Click" 
+                Style="{StaticResource ButtonWithAnimation_Style}"/>
+            <Button 
+                 Name="Exit_Button"
+                 Content="Exit"
+                 Width="80"
+                 Height="Auto"
+                 HorizontalAlignment="Center"
+                 Style="{StaticResource ButtonWithAnimation_Style}"
+                 Click="Exit_Click"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -16,7 +16,7 @@ namespace Crypto_V2.ViewModel
             _cryptoModel = new CryptoModel();
             CryptoDataList = new ObservableCollection<CryptoModel.CryptoData>();
         }
-        
+
         public CryptoModel.CryptoData SearchCryptoByNameOrSymbol(string searchTerm)
         {
             try
@@ -28,7 +28,7 @@ namespace Crypto_V2.ViewModel
 
                 return foundCrypto;
             }
-            catch (Exception) 
+            catch (Exception)
             {
                 MessageBox.Show("API don't work, check internet connection", "Details", MessageBoxButton.OK, MessageBoxImage.Error);
                 return null;
@@ -36,4 +36,3 @@ namespace Crypto_V2.ViewModel
         }
     }
 }
-

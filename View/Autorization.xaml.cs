@@ -24,7 +24,8 @@ namespace Crypto_V2.View
             public string Username { get; set; }
             public string Password { get; set; }
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void Login_Click(object sender, RoutedEventArgs e)
         {
             string jsonFilePath = "Properties/users.json";
             List<User> users = JsonConvert.DeserializeObject<List<User>>(File.ReadAllText(jsonFilePath));
@@ -54,6 +55,7 @@ namespace Crypto_V2.View
             }
         }
 
+
         private bool isDraggind = false;
         private Point startPoint;
         private void TitleBar_MouseDown(object sender, MouseButtonEventArgs e)
@@ -64,6 +66,7 @@ namespace Crypto_V2.View
                 startPoint = e.GetPosition(this);
             }
         }
+
         private void Window_MouseMove(object sender, MouseEventArgs e)
         {
             if (isDraggind)
@@ -71,11 +74,11 @@ namespace Crypto_V2.View
                 Point endPoint = e.GetPosition(this);
                 double offsetX = endPoint.X - startPoint.X;
                 double offsetY = endPoint.Y - startPoint.Y;
-
                 Left += offsetX;
                 Top += offsetY;
             }
         }
+
         private void Window_MouseUp(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton != MouseButton.Left)
@@ -88,7 +91,6 @@ namespace Crypto_V2.View
         {
             CreateUserWindow createUserWindow = new CreateUserWindow();
             createUserWindow.ShowDialog();
-
             User newUser = createUserWindow.CreatedUser;
 
             if (newUser != null)
@@ -115,7 +117,6 @@ namespace Crypto_V2.View
                 {
                     MessageBox.Show("Error, contact to @JEKARPIO", "Information" + ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-
             }
         }
 
@@ -123,9 +124,6 @@ namespace Crypto_V2.View
         {
             this.Close();
         }
-
-        
     }
-
 }
 

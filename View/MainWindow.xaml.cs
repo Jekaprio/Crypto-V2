@@ -1,6 +1,4 @@
-﻿
-using System;
-using System.IO;
+﻿using System;
 using System.Net;
 using System.Net.Http;
 using System.Windows;
@@ -16,16 +14,14 @@ namespace Crypto_V2
 
         public MainWindow()
         {
-
             InitializeComponent();
             Instance = this;
             _httpClient = new HttpClient();
-
             this.MouseMove += Window_MouseMove;
             this.MouseUp += Window_MouseUp;
         }
 
-        private void CheckApiStatus(object sender, RoutedEventArgs e)  // Перевірка працездатності API 
+        private void CheckApiStatus(object sender, RoutedEventArgs e) 
         {
             string apiUrl = "https://api.coincap.io/v2/assets";
             try
@@ -42,12 +38,12 @@ namespace Crypto_V2
             }
         }
 
-        private void CloseButton_Click(object sender, RoutedEventArgs e) // Закрити програму 
+        private void CloseButton_Click(object sender, RoutedEventArgs e)  
         {
             this.Close();
         }
 
-        private bool isDraggind = false; // Контролювати програму в TitleBar мишею
+        private bool isDraggind = false; 
         private Point startPoint;
 
         private void TitleBar_MouseDown(object sender, MouseButtonEventArgs e)
@@ -80,31 +76,27 @@ namespace Crypto_V2
             }
         }
 
-        private void Home_Click(object sender, RoutedEventArgs e)  // Відкрити сторінку Home
+        private void Home_Click(object sender, RoutedEventArgs e)  
         {
             MainFrame.Navigate(new Uri("View/Home.xaml", UriKind.Relative));
             TextBlockHello.Background = Brushes.Transparent;
             TextBlockHello.Foreground = Brushes.Transparent;
         }
 
-        private void Details_Click(object sender, RoutedEventArgs e) // Відкрити стоірнку Details
+        private void Details_Click(object sender, RoutedEventArgs e) 
         {
             MainFrame.Navigate(new Uri("View/Detailed.xaml", UriKind.Relative));
             TextBlockHello.Background = Brushes.Transparent;
             TextBlockHello.Foreground = Brushes.Transparent;
         }
 
-        private void Setting_Click(object sender, RoutedEventArgs e) // Відкрити сторінку Setting
+        private void Setting_Click(object sender, RoutedEventArgs e) 
         {
             MainFrame.Navigate(new Uri("View/Setting.xaml", UriKind.Relative));
             TextBlockHello.Background = Brushes.Transparent;
             TextBlockHello.Foreground = Brushes.Transparent;
 
-            
         }
-
-
     }
-
 }
 

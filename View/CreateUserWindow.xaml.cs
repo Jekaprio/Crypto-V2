@@ -44,7 +44,6 @@ namespace Crypto_V2.View
                 Point endPoint = e.GetPosition(this);
                 double offsetX = endPoint.X - startPoint.X;
                 double offsetY = endPoint.Y - startPoint.Y;
-
                 Left += offsetX;
                 Top += offsetY;
             }

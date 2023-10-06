@@ -53,3 +53,7 @@ C:\PROJECT\Crypto V2\Crypto V2\bin\Release\de\PdfSharp.resources.dll
 C:\PROJECT\Crypto V2\Crypto V2\bin\Release\de\PdfSharp.Charting.resources.dll
 C:\PROJECT\Crypto V2\Crypto V2\obj\Release\View\CreateUserWindow.g.cs
 C:\PROJECT\Crypto V2\Crypto V2\obj\Release\View\CreateUserWindow.baml
+C:\PROJECT\Crypto V2\Crypto V2\bin\Release\Crypto V2.exe.manifest
+C:\PROJECT\Crypto V2\Crypto V2\bin\Release\Crypto V2.application
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\Crypto V2.exe.manifest
+C:\PROJECT\Crypto V2\Crypto V2\obj\Release\Crypto V2.application

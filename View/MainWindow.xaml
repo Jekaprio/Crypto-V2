@@ -7,7 +7,9 @@
         Title="Crypto V2"  WindowStyle="None" AllowsTransparency="True" Height="500" Width="900"
         Style="{StaticResource Window_Style}">
 
-    <Grid Name="MainGrid" Height="485" VerticalAlignment="Top" Margin="0,0,-25,0" Background="Transparent" Opacity="0">
+    <Grid Name="MainGrid" Height="485" 
+          VerticalAlignment="Top" Margin="0,0,-25,0" 
+          Background="Transparent" Opacity="0">
 
         <Grid.Triggers>
             <EventTrigger RoutedEvent="Loaded">
@@ -59,7 +61,6 @@
                         Margin="5,0,0,15"
                         Width="75"
                         Style="{StaticResource ButtonWithAnimation_Style}"/>
-
                 <Button 
                         Name="Exit_Button"
                         Content="Exit"  
@@ -70,9 +71,14 @@
                         />
             </StackPanel>
         </Border>
-        <Border Background="WhiteSmoke" Width="700" Height="400" CornerRadius="25,25,25,25">
-        <StackPanel Margin="0,0,0,0"  Width="750" Height="400" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <TextBlock  Name="TextBlockHello" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" TextWrapping="Wrap" Width="700" Height="400" FontFamily="Agency FB">
+        <Border Background="WhiteSmoke" Width="700" Height="400" 
+                CornerRadius="25,25,25,25">
+        <StackPanel Margin="0,0,0,0"  Width="750" Height="400" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock  Name="TextBlockHello" FontSize="20" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center" 
+                    Background="Transparent" TextWrapping="Wrap" Width="700" Height="400" 
+                    FontFamily="Agency FB">
                 <LineBreak/>
             <Run Text="   Introducing"/>
                 <Run Text="Crypto" FontWeight="Bold" FontStyle="Normal"/>
@@ -94,7 +100,6 @@
                 <Run Text="   Visualize Trends:" FontWeight="Bold" FontStyle="Normal"/>
                 <Run Text="Understand cryptocurrency trends with interactive charts. Monitor price fluctuations and make informed decisions."/>
             <LineBreak/>
-           
             <LineBreak/>
             <Run Text="   Crypto is your trusted partner in the cryptocurrency world, whether you're an enthusiast, investor, or simply curious. Explore, convert, and thrive with Crypto."/>
         </TextBlock>
@@ -113,7 +118,9 @@
                 HorizontalAlignment="Left" 
                 Height="Auto" 
                 Margin="730,0,0,0" >
-                <TextBlock Text="Crypto V2" VerticalAlignment="Center" Margin="-700" FontFamily="Agency FB" FontSize="15" FontWeight="Bold" Foreground="Silver"/>
+                <TextBlock Text="Crypto V2" VerticalAlignment="Center" Margin="-700" 
+                           FontFamily="Agency FB" FontSize="15" FontWeight="Bold" 
+                           Foreground="Silver"/>
             </StackPanel>
         </Border>
         <Border Background="#FAEBD7" 
@@ -122,7 +129,6 @@
                 VerticalAlignment="Bottom" 
                 Margin="0,0,25,0">
         </Border>
-      
         <Frame Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

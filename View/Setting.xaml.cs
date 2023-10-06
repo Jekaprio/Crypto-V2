@@ -1,6 +1,6 @@
 ﻿using Crypto_V2.ViewModel;
-using System.IO;
 using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -13,7 +13,6 @@ namespace Crypto_V2.View
         public static Setting Instance;
         public Setting()
         {
-
             Instance = this;
             InitializeComponent();
             DataContext = this;
@@ -21,12 +20,9 @@ namespace Crypto_V2.View
             Storyboard animation = (Storyboard)FindResource("PageEnterAnimation");
             if (animation != null)
             {
-
                 animation.Begin(ContentGrid);
             }
-
             var systemFonts = Fonts.SystemFontFamilies;
-
             foreach (FontFamily fontFamily in systemFonts)
             {
                 FontComboBox.Items.Add(fontFamily.Source);
@@ -37,7 +33,6 @@ namespace Crypto_V2.View
         {
             string selectedFontName = FontComboBox.SelectedItem.ToString();
             FontFamily selectedFontFamily = new FontFamily(selectedFontName);
-
             MainWindow mainWindow = MainWindow.Instance;
             Autorization autorization = Autorization.Instance;
             CreateUserWindow createUserWindow = CreateUserWindow.Instance;
@@ -64,7 +59,7 @@ namespace Crypto_V2.View
             {
                 MessageBox.Show(privacyPolicyText, "Privacy Policy", MessageBoxButton.OK);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error opening Privacy Policy, contact JEKARPIO.", "Error" + ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -82,6 +77,14 @@ namespace Crypto_V2.View
             {
                 MessageBox.Show("Error opening License, contact JEKARPIO.", "Error" + ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void ChangeUser_Click(object sender, RoutedEventArgs e)
+        {
+            Autorization autorization = new Autorization();
+            Window currentWindow = Window.GetWindow(this);
+            currentWindow.Close();
+            autorization.Show();
         }
     }
 }

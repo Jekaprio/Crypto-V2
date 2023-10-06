@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Create new user" Height="300" Width="300" Style="{StaticResource AutoRization_Style}"
         >
+    
     <Grid>
         <Border 
              Background="#FAEBD7" 
@@ -20,7 +21,7 @@
              HorizontalAlignment="Left" 
              Height="Auto" 
              Margin="730,0,0,0" >
-                <TextBlock 
+             <TextBlock 
              Name="CreateNewUser_TextBlock"
              Text="Create new user" 
              VerticalAlignment="Center" 
@@ -38,7 +39,11 @@
              CornerRadius="25,25,25,25" 
              VerticalAlignment="Bottom"/>
 
-        <StackPanel Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel 
+            Width="Auto" 
+            Height="Auto" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center">
             <TextBox 
                 Name="UsernameTextBox"  
                 ToolTip="Enter new user login"

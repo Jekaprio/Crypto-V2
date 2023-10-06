@@ -23,7 +23,7 @@
                 </StackPanel>
                 <StackPanel Width="Auto" Height="400" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="120,0,0,0">
                     <TextBlock Name="Account_TextBlock" Text="Account" FontSize="25" Margin="-50,0,0,10" FontWeight="UltraLight" FontFamily="Agency FB"/>
-                    <Button  Name="Changeuser_Button" Content="Change new User" Width="200" Margin="-25,0,0,25" Height="30" Style="{StaticResource ButtonWithAnimation_Style}" FontSize="20"/>
+                    <Button  Name="Changeuser_Button" Click="ChangeUser_Click" Content="Change new User" Width="200" Margin="-25,0,0,25" Height="30" Style="{StaticResource ButtonWithAnimation_Style}" FontSize="20"/>
                     <TextBlock Name="View_TextBlock" Text="View(Menu item)" FontSize="25" Margin="-50,0,0,0" FontWeight="UltraLight" FontFamily="Agency FB"/>
                     <ComboBox  Style="{StaticResource ComboBox_Style}" Margin="-25,10,0,0"  Name="FontComboBox" SelectionChanged="FontComboBox_SelectionChanged"/>
 
@@ -45,7 +45,7 @@
                         Style="{StaticResource ButtonWithAnimation_Style}" 
                         FontSize="20"/>
 
-
+                    <Label Name="UsernameLabel" Content="Username: " FontSize="18" FontWeight="Bold" Margin="10"/>
 
                 </StackPanel>
             </StackPanel>

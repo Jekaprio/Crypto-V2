@@ -31,7 +31,6 @@ namespace Crypto_V2.View
         {
             if (Top10List != null && Top10List.Items.Count > 0)
             {
-
                 var folderDialog = new System.Windows.Forms.FolderBrowserDialog();
                 System.Windows.Forms.DialogResult result = folderDialog.ShowDialog();
 
